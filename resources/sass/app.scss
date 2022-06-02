@@ -1,0 +1,32 @@
+
+// Bootstrap
+@use "custom";
+
+// Variables
+@use "variables";
+
+// IMPORT THE COMPONENTS
+@use "components/titles";
+@use "components/button";
+// @use "components/circles";
+@use "components/github-icon";
+@use "components/loading";
+@use "components/scroll-top";
+// @use "components/quick-links";
+@use "components/blog-card";
+
+// IMPORT THE SECTIONS
+@use "sections/header";
+@use "sections/home";
+@use "sections/about";
+@use "sections/projects";
+@use "sections/blogs";
+@use "sections/contact";
+@use "sections/footer";
+
+
+// IMPORT BLOG PAGES
+@use "blog/blog-detail";
+@use "blog/blog-page";
+
+

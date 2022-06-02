@@ -1,0 +1,218 @@
+@use "../custom" as *;
+@use "../variables" as *;
+
+/*===== Start Contact Section =====*/
+
+.contact{
+
+    &__container{
+        position: relative;
+        min-height: 550px;
+        display: flex;
+        z-index: 2;
+
+        @include media-breakpoint-down(lg){
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            flex-direction: column-reverse;
+        }
+
+        .contact-info{
+            position: absolute;
+            top: 50px;
+            width: 350px;
+            height: calc(100% - 100px);
+            padding: 30px;
+            z-index: 1;
+            box-shadow: 0 20px 20px rgba(0, 0, 0, 0.15);
+            background-color: var(--clr-dark-black);
+
+            @include media-breakpoint-down(lg){
+                top: 0;
+                position: relative;
+                box-shadow: none;
+                width: 100%;
+            }
+
+            &__title{
+                color: var(--clr-white);
+                font-size: var(--lg-font);
+            }
+
+            &__list{
+                position: relative;
+                margin: 2rem 0;
+                padding: 0;
+                font-size: .9rem;
+
+                &__item{
+                    position: relative;
+                    list-style: none;
+                    display: flex;
+                    margin: 2rem 0;
+                    align-items: flex-start;
+
+                    span:nth-child(1)
+                    {
+                        width: 30px;
+                        min-width: 30px;
+                    }
+                    span:nth-child(2){
+                        color: #fff;
+                        font-weight: 300;
+                        margin-left: 10px;
+                    }
+                    span:nth-child(1) img{
+                        max-width: 100%;
+                        filter: invert(1);
+                    }
+                }
+            }
+
+            &__social__list{
+                position: relative;
+                display: flex;
+                padding: 0;
+
+                @include media-breakpoint-down(lg){
+                    justify-content: center;
+                }
+
+                &__item{
+                    margin-right: 15px;
+
+                    &:hover i{
+                        color: var(--clr-accent);
+                    }
+                }
+                &__item i{
+                    font-size: var(--lg-font);
+                    color: var(--clr-white);
+                    transition: all .3s;
+                }
+            }
+        }
+
+        .contact-form{
+            position: absolute;
+            padding: 20px 50px;
+            padding-left: 250px;
+            margin-left: 150px;
+            width: calc(100% - 150px);
+            height: 100%;
+            background-color: var(--clr-light-black);
+
+            @include media-breakpoint-down(lg){
+                position: relative;
+                margin-left: 0;
+                padding: 40px;
+                width: 100%;
+                height: auto;
+            }
+
+            @include media-breakpoint-down(md){
+                padding: 20px;
+            }
+
+            &__title{
+                color: var(--clr-white);
+                font-size: var(--lg-font);
+            }
+
+            &__box{
+                position: relative;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                // padding-top: 20px;
+
+                .input-box {
+                    position: relative;
+                    margin: 20px 0;
+                    width: 300px;
+
+                    &.w50{
+                        width: 47%;
+
+                        @include media-breakpoint-down(md){
+                            width: 100%;
+                        }
+                    }
+                    &.w100{
+                        width: 100%;
+                    }
+
+                    textarea{
+                        height: 120px;
+                        resize: none;
+                    }
+
+                    &__item {
+                        background-color: transparent;
+                        border: 0;
+                        border-bottom: 1px #fff solid;
+                        display: block;
+                        width: 100%;
+                        padding: 10px 0;
+                        color: #fff;
+                        font-family: var(--body-font);
+                        font-size: 1rem;
+                        letter-spacing: 1;
+
+                        &:focus, &:valid {
+                            outline: 0;
+                        }
+
+                        &:focus ~ label span,
+                        &:valid ~ label span{
+                            color: var(--clr-accent);
+                            transform: translateY(-20px);
+                        }
+
+                        & ~.focus-border {
+                            position: absolute;
+                            bottom: 0;
+                            left: 50%;
+                            width: 0;
+                            height: 1px;
+                            background-color: var(--clr-accent);
+                            transition: 0.4s;
+                        }
+
+                        &:focus~.focus-border {
+                            width: 100%;
+                            transition: 0.4s;
+                            left: 0;
+                        }
+
+
+                    }
+
+                    .error{
+                        position: absolute;
+                        bottom: -25px;
+                    }
+
+                    label {
+                        position: absolute;
+                        top: 10px;
+                        left: 0;
+                        pointer-events: none;
+
+                        span {
+                            display: inline-block;
+                            font-size: .9rem;
+                            min-width: 5px;
+                            transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+
+/*===== End Contact Section =====*/
+
+

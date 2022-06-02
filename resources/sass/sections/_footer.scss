@@ -1,0 +1,28 @@
+@use "../custom" as *;
+@use "../variables" as *;
+
+
+/*===== Start Footer Section =====*/
+
+.footer{
+    background-color: var(--clr-light-black);
+    margin-top: 5rem;
+
+    .footer-container{
+        font-size: var(--sm-font);
+        text-align: center;
+        padding: 1rem 0;
+
+        p{
+            margin: 0;
+        }
+
+
+        @include media-breakpoint-up(md){
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
+
+/*===== End Footer Section =====*/

@@ -1,0 +1,15 @@
+@use "../custom" as *;
+@use "../variables" as *;
+
+@mixin grid($val) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+    gap: 1.5rem;
+
+    @include media-breakpoint-down(md){
+        grid-template-columns: 1fr;
+    }
+}
+
+
+

@@ -1,0 +1,95 @@
+@use "../custom" as *;
+@use "../variables" as *;
+@use "../components/mixins" as *;
+
+// Main Title
+
+.main-title{
+    font-weight: normal;
+    margin: 4rem 0;
+
+    @mixin title {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        position: relative;
+
+        @include media-breakpoint-down(sm){
+            justify-content: center;
+        }
+    }
+
+    @mixin title-name {
+        content: attr(data-content);
+        position: absolute;
+        font-size: var(--xxl-font);
+        color: transparent;
+        -webkit-text-stroke: 1px var(--clr-accent);
+        opacity: .2;
+
+        @include media-breakpoint-down(sm){
+            display: none;
+        }
+    }
+
+    &.title-left{
+        @include title;
+
+        &::before{
+
+            @include title-name;
+            left: 0;
+
+        }
+    }
+    &.title-right{
+        @include title;
+        justify-content: flex-end;
+
+        &::before{
+
+            @include title-name;
+            right: 0;
+        }
+    }
+
+
+    &__number{
+        font-family: var(--title-font);
+        font-size: var(--xl-font);
+
+        @include media-breakpoint-down(sm){
+            display: none;
+        }
+    }
+
+    &__text{
+        text-align: center;
+
+        &-short{
+            letter-spacing: 2px;
+            font-size: var(--sm-font);
+        }
+
+        &-long{
+            letter-spacing: 2px;
+            font-size: var(--lg-font);
+        }
+
+    }
+
+}
+
+// Intro Title
+
+.intro{
+    font-family: var(--title-font);
+    margin-bottom: 5rem;
+
+    h1{
+        font-size: var(--lg-font);
+        font-weight: 300;
+        letter-spacing: 1.5px;
+    }
+
+}

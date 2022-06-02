@@ -1,0 +1,434 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(10 7 14);
+    color: #fff;
+}
+a{
+    display: inline-block;
+}
+
+.main-title{
+    font-size: 2rem;
+    font-weight: 300;
+    margin: 0 auto;
+
+    border-bottom: 1px solid #fff;
+    width: max-content;
+}
+
+.logo a{
+    font-size: 3rem;
+    text-decoration: none;
+    color: transparent;
+    -webkit-text-stroke: 1px #00C896;
+}
+
+.header{
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header h1{
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.header .username{
+    color: #00C896;
+}
+
+.go-to-back{
+    margin: 20px 0 50px;
+}
+.go-to-back .line-btn::after{
+    height: 1px;
+}
+
+/* Main Button */
+.main-btn {
+    outline: none;
+    display: inline-block;
+    position: relative;
+    background: #00C896;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: background .5s ease;
+    overflow: hidden;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+.main-btn:before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 100px;
+    background: white;
+    bottom: -25px;
+    left: 0;
+    border: 2px solid white;
+    transform: translateX(-50px) rotate(45deg);
+    transition: transform .5s ease;
+}
+.main-btn:hover {
+    background: transparent;
+    border-color: white;
+    color: #fff;
+}
+.main-btn:hover:before {
+    transform: translateX(250px) rotate(45deg);
+}
+
+
+/* Line Button */
+
+.line-btn{
+    position: relative;
+    color: #00C896;
+    font-weight: 400;
+    text-decoration: none;
+}
+.line-btn::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: #00C896;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 250ms ease-in;
+}
+.line-btn:hover{
+    color: #00C896;
+}
+.line-btn:hover::after{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.js-tilt-glare {
+    border-radius: 18px;
+}
+
+.d-none{
+    display: none;
+}
+
+@media screen and (max-width: 468px){
+    .header{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 468px){
+    .container{
+        padding: 10px;
+    }
+}
+
+.error {
+    position: absolute;
+    bottom: -25px;
+}
+
+
+/* Table Styles */
+
+.table-wrapper{
+    margin: 20px 70px 70px;
+    color: black;
+}
+.table-wrapper a{
+    color:
+}
+
+form{
+    display: inline;
+}
+
+.fl-table {
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+}
+
+.fl-table td, .fl-table th {
+    text-align: center;
+    padding: 8px;
+}
+
+.fl-table td {
+    border-right: 1px solid #f8f8f8;
+}
+
+.fl-table thead th {
+    font-weight: normal;
+    font-size: 16px;
+    color: #ffffff;
+    background: #222;
+}
+
+
+.fl-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #2f2f2f;
+}
+
+.fl-table tr:nth-child(even) {
+    background: #F1F1F1;
+}
+
+
+
+/* Responsive */
+
+@media (max-width: 767px) {
+    .fl-table {
+        display: block;
+        width: 100%;
+    }
+    .table-wrapper:before{
+        content: "Scroll horizontally >";
+        display: block;
+        font-size: 11px;
+        color: white;
+        padding: 0 0 10px;
+    }
+    .fl-table thead, .fl-table tbody, .fl-table thead th {
+        display: block;
+    }
+    .fl-table thead th:last-child{
+        border-bottom: none;
+    }
+    .fl-table thead {
+        float: left;
+    }
+    .fl-table tbody {
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+    }
+    .fl-table td, .fl-table th {
+        padding: 20px .625em .625em .625em;
+        height: 60px;
+        vertical-align: middle;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 150px;
+        font-size: 13px;
+        text-overflow: ellipsis;
+    }
+    .fl-table thead th {
+        text-align: left;
+        border-bottom: 1px solid #f7f7f9;
+        font-size: 12px;
+        width: 100px;
+    }
+    .fl-table tbody tr {
+        display: table-cell;
+    }
+    .fl-table tbody tr:nth-child(odd) {
+        background: none;
+    }
+    .fl-table tr:nth-child(even) {
+        background: transparent;
+    }
+    .fl-table tr td:nth-child(odd) {
+        background: #F8F8F8;
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tr td:nth-child(even) {
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tbody td {
+        display: block;
+        text-align: center;
+    }
+}
+
+
+
+.project-form, .blog-form{
+    border-radius: 5px;
+    border: 1px solid #555;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    padding: 1rem;
+}
+.form-group{
+    position: relative;
+    margin-bottom: 3rem;
+}
+.input-item{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px #fff solid;
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    color: #fff;
+    letter-spacing: 1;
+    font-weight: 800;
+}
+.input-item:focus, .input-item:valid {
+    outline: 0;
+}
+.input-item ~.focus-border {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background-color: #00C896;
+    transition: 0.4s;
+}
+
+.input-item:focus~.focus-border {
+    width: 100%;
+    transition: 0.4s;
+    left: 0;
+}
+
+/* Textarea */
+
+textarea{
+    width: 100%;
+    resize: none;
+    height: 59px;
+    margin-top: 20px;
+    max-height: 330px;
+    caret-color: #4671EA;
+    font-weight: 800;
+}
+textarea::-webkit-scrollbar{
+    width: 0px;
+}
+
+/* Input File */
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile + label {
+    max-width: 80%;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0.625rem 1.25rem;
+}
+
+.inputfile:focus + label,
+.inputfile.has-focus + label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+.inputfile + label svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    margin-top: -0.25em;
+    margin-right: 0.25em;
+}
+
+.inputfile-1 + label {
+    color: #f1e5e6;
+    background-color: transparent;
+    border: 1px solid #00C896;
+    transition: all .3s;
+}
+
+.inputfile-1:focus + label,
+.inputfile-1.has-focus + label,
+.inputfile-1 + label:hover {
+    color: #000;
+    background-color: #00C896;
+}
+
+/* Preview Image */
+
+.img-preview {
+    width: 300px;
+    min-height: 100px;
+    border: 2px solid #dddddd;
+    margin-top: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #cccccc;
+}
+.img-preview__image {
+    display: none;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Skill Tag Input */
+
+
+.skillTags-note{
+    color: violet;
+    font-size: .8rem;
+    cursor: default;
+}
+.tags-input-wrapper{
+    background: transparent;
+    padding: 10px 0;
+    max-width: 400px;
+    border-bottom: 1px solid #ccc;
+    color: #fff;
+}
+.tags-input-wrapper input{
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+    font-family: 'Poppins';
+    color: gray;
+}
+
+.tags-input-wrapper .tag{
+    display: inline-block;
+    background-color: #00C896;
+    color: black;
+    border-radius: 3px;
+    padding: 5px 6px;
+    margin-right: 5px;
+    margin-bottom:5px;
+}
+.tags-input-wrapper .tag a {
+    margin: 5px 6px;
+    display: inline-block;
+    cursor: pointer;
+}

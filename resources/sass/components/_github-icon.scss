@@ -1,0 +1,42 @@
+@use "../custom" as *;
+@use "../variables" as *;
+
+.github-corner{
+
+    svg{
+        fill: var(--clr-accent);
+        color: #fff;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: var(--z-4);
+    }
+
+    &:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out
+    }
+
+    @include media-breakpoint-down(lg){
+        display: none;
+    }
+
+}
+
+@keyframes octocat-wave {
+
+    0%,
+    100% {
+        transform: rotate(0)
+    }
+
+    20%,
+    60% {
+        transform: rotate(-25deg)
+    }
+
+    40%,
+    80% {
+        transform: rotate(10deg)
+    }
+}

@@ -1,0 +1,51 @@
+@use "../custom" as *;
+@use "../variables" as *;
+
+.scroll-top-btn{
+    position: fixed;
+    bottom: -100%;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    background-color: var(--clr-accent);
+    color: var(--clr-white);
+    z-index: var(--z-4);
+    border: 1px solid transparent;
+    cursor: pointer;
+    border-radius: 2px;
+    pointer-events: none;
+    transition: all 0.5s ease;
+    animation: scrollUp 2s linear infinite;
+
+    i{
+        color: var(--clr-dark-black);
+    }
+
+    &.show{
+        bottom: 3rem;
+        pointer-events: auto;
+    }
+
+    &:hover{
+        border: 1px solid var(--clr-white);
+    }
+
+    @include media-breakpoint-down(md){
+        display: none;
+    }
+
+}
+
+@keyframes scrollUp{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
