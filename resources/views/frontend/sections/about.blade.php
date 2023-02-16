@@ -1,5 +1,3 @@
-
-
 <!-- ========== About Section ========== -->
 <section class="about" id="about">
 
@@ -29,12 +27,14 @@
                     <div class="tab-content biography">
                         <div class="biography__container">
                             <div class="biography__img">
-                                <a href="{{ asset('frontend/images/about.png') }}" data-caption="My Photo" class="lightbox"><span><img src="frontend/images/about.png" alt="" /></span></a>
+                                <a href="{{ asset('frontend/images/mine/pf-3.jpg') }}" data-caption="My Photo" class="lightbox" style="width: 80%"><span><img src="frontend/images/mine/pf-3.jpg" alt="" /></span></a>
                             </div>
                             <div class="biography__text-container">
                                 <div class="biography__text notebook">
-                                    <p>Being a web developer career may sound cool, but it doesn’t mean that you can become one instantly. Like any other job, you need to understand what it is and what skills are required for you to excel in this field. As a web developer, you need to learn how to develop applications related to distributed network applications. They will only function by using the language that computers understand. Therefore, you need to know at least one language for you to practice web development.
+                                    <p>
+                                        Zaw Hlaing Win is an experienced web developer specializing in Laravel and Vue.js. He has worked on a variety of projects, from small personal websites to large-scale enterprise applications.
 
+                                        His passion for web development began when he was in college, where he studied computer science. Even before graduating, he worked as a software engineer for a few years, where he gained valuable experience in programming languages such as Java, C++, PHP. However, he soon realized that his true passion was web development, particularly working with Laravel and Vue.js.
                                     </p>
                                 </div>
 
@@ -44,34 +44,34 @@
 
                     <div class="tab-content gallery">
                         <div class="intro gallery__intro">
-                            <h1>These are my favourite pics which through my life with my family and friends. <img src= "frontend/images/gif/Ball.gif" width= "30" height= "30"></h1>
+                            <h1>These are my favourite pics which through my life with my family and friends. <img src="frontend/images/gif/Ball.gif" width="30" height="30"></h1>
                         </div>
                         <div class="gallery-container">
                             <div class="row">
                                 <div class="column">
-                                    <a href="{{ asset('frontend/images/mine/zaw-1.jpg') }}" class="lightbox" data-caption="ချောက်မြို့ရှိ ဘုရား၌">
+                                    <a href="{{ asset('frontend/images/mine/zaw-1.jpg') }}" class="lightbox" data-caption="Photo 1">
                                         <img src="{{ asset('frontend/images/mine/zaw-1.jpg') }}" class="img-fluid" alt="First image">
                                     </a>
-                                    <a href="{{ asset('frontend/images/mine/zaw-2.jpg') }}" class="lightbox" data-caption="ချောက်မြို့ရှိ အိမ်၌">
+                                    <a href="{{ asset('frontend/images/mine/zaw-2.jpg') }}" class="lightbox" data-caption="Photo 2">
                                         <img src="{{ asset('frontend/images/mine/zaw-2.jpg') }}" class="img-fluid" alt="First image">
                                     </a>
                                 </div>
                                 <div class="column">
-                                    <a href="{{ asset('frontend/images/mine/zaw-3.jpg') }}" class="lightbox" data-caption="မိတ္ထီလာရှိ ဘုရား၌">
+                                    <a href="{{ asset('frontend/images/mine/zaw-3.jpg') }}" class="lightbox" data-caption="Photo 3">
                                         <img src="{{ asset('frontend/images/mine/zaw-3.jpg') }}" class="img-fluid" alt="First image">
                                     </a>
-                                    <a href="{{ asset('frontend/images/mine/zaw-4.jpeg') }}" class="lightbox" data-caption="ရေနံတိုင်များနှင့်">
+                                    <a href="{{ asset('frontend/images/mine/zaw-4.jpeg') }}" class="lightbox" data-caption="Photo 4">
                                         <img src="{{ asset('frontend/images/mine/zaw-4.jpeg') }}" class="img-fluid" alt="First image">
                                     </a>
-                                    <a href="{{ asset('frontend/images/mine/zaw-5.jpeg') }}" class="lightbox" data-caption="Capital ၌">
+                                    <a href="{{ asset('frontend/images/mine/zaw-5.jpeg') }}" class="lightbox" data-caption="Photo 5">
                                         <img src="{{ asset('frontend/images/mine/zaw-5.jpeg') }}" class="img-fluid" alt="First image">
                                     </a>
                                 </div>
                                 <div class="column last">
-                                    <a href="{{ asset('frontend/images/mine/zaw-6.jpeg') }}" class="lightbox" data-caption="မိတ္ထီလာရှိ တက္ကသိုလ်၌">
+                                    <a href="{{ asset('frontend/images/mine/zaw-6.jpeg') }}" class="lightbox" data-caption="Photo 6">
                                         <img src="{{ asset('frontend/images/mine/zaw-6.jpeg') }}" class="img-fluid" alt="First image">
                                     </a>
-                                    <a href="{{ asset('frontend/images/mine/zaw-7.jpeg') }}" class="lightbox" data-caption="စက်ဆဲကမ်းခြေ၌">
+                                    <a href="{{ asset('frontend/images/mine/zaw-7.jpeg') }}" class="lightbox" data-caption="Photo 7">
                                         <img src="{{ asset('frontend/images/mine/zaw-7.jpeg') }}" class="img-fluid" alt="First image">
                                     </a>
                                 </div>
@@ -81,7 +81,7 @@
 
                     <div class="tab-content skills">
                         <div class="intro skills__intro">
-                            <h1>I'm fullstack web developer and currently working with these skills. <img src= "frontend/images/gif/Trophy.gif" width= "30" height= "30"></h1>
+                            <h1>I'm fullstack web developer and currently working with these skills. <img src="frontend/images/gif/Trophy.gif" width="30" height="30"></h1>
                         </div>
                         <div class="skills-container">
                             <div class="row">
@@ -174,5 +174,3 @@
         </div>
     </div>
 </section>
-
-
