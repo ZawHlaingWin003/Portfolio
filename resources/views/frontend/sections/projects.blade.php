@@ -93,15 +93,10 @@
                 @endforelse
 
 
-                <div class="more-project-btn" style="text-align: center;">
-                    <a href="https://github.com/ZawHlaingWin003" class="main-btn">
-                        More Projects
-                        <span>
-                            <svg>
-                                <use xlink:href="#arrow" href="#arrow"></use>
-                            </svg>
-                        </span>
-                    </a>
+                <div class="more-project-btn d-flex justify-content-center">
+                    <x-link-button iconName="fa-suitcase">
+                        More Projects On Github
+                    </x-link-button>
                 </div>
             </div>
         </div>

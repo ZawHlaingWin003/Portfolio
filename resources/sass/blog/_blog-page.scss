@@ -5,18 +5,12 @@
 
 
 .blogPage {
-    background: var(--clr-light-black);
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    padding-top: 12rem;
 
     .banner {
         width: 65%;
         position: relative;
-        left: 50%;
-        transform: translateX(-50%);
+        margin: 0 auto;
 
         @include media-breakpoint-down(lg){
             width: 90%;
@@ -38,25 +32,15 @@
 
         }
 
-        p {
-            padding: 1rem 0 2rem 0;
-            text-transform: capitalize;
-            text-align: center;
-
-            @include media-breakpoint-down(md){
-                font-size: var(--sm-font);
-                text-align: left;
-            }
-        }
-
         form {
+            margin: 3rem 0;
 
             .input-group {
                 position: relative;
 
                 .search {
                     color: var(--clr-white);
-                    background: var(--clr-dark-black);
+                    background: var(--clr-light-black);
                     width: 100%;
                     font-size: 1.2rem;
                     font-weight: 300;
@@ -64,7 +48,6 @@
                     word-spacing: 2px;
                     font-family: var(--body-font);
                     border: none;
-                    border-radius: 2px;
                     padding: 15px;
                     transition: 0.4s;
 
@@ -126,7 +109,7 @@
 
             .main-btn {
                 float: right;
-                margin: 2rem 0;
+                margin: 1rem 0;
             }
 
         }

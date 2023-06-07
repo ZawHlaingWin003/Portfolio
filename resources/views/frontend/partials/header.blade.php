@@ -1,6 +1,3 @@
-
-
-<!-- ========== Header ========== -->
 <header class="header" id="header">
     <div class="container">
         <nav class="nav">

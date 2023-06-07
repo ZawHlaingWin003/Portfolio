@@ -31,7 +31,7 @@ Route::get('/blogs/{blog}', [BlogController::class, 'show'])->name('blogs.show')
 Route::get('/download-cv', DownloadCvController::class)->name('download-cv');
 
 // ========== Send Message ==========
-Route::post('/contact', ContactController::class)->name('contact.store');
+Route::post('/contact', ContactController::class)->name('contact.send');
 
 // ========== Admin Dashboard ==========
 Route::get('/admin', function(){

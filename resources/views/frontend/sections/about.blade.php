@@ -32,9 +32,9 @@
                             <div class="biography__text-container">
                                 <div class="biography__text notebook">
                                     <p>
-                                        Zaw Hlaing Win is an experienced web developer specializing in Laravel and Vue.js. He has worked on a variety of projects, from small personal websites to large-scale enterprise applications.
+                                        Hello my gorgeous friend, I'm Zaw Hlaing Win, an experienced web developer specializing in Laravel and Vue.js. I have worked on a variety of projects, from small personal websites to large-scale enterprise applications.
 
-                                        His passion for web development began when he was in college, where he studied computer science. Even before graduating, he worked as a software engineer for a few years, where he gained valuable experience in programming languages such as Java, C++, PHP. However, he soon realized that his true passion was web development, particularly working with Laravel and Vue.js.
+                                        My passion for web development began when I was in college, where I studied computer science. Even before graduating, I worked as a software engineer for a few years, where I gained valuable experience in programming languages such as Java, C++, PHP. However, I soon realized that my true passion was web development, particularly working with Laravel and Vue.js.
                                     </p>
                                 </div>
 

@@ -28,10 +28,10 @@ class ProjectController extends Controller
             'coder' => 'required',
             'overview' => 'required',
             'image_path' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'tags' => 'required'
+            // 'tags' => 'required'
         ]);
 
-        $filename = time().'-'.$request->image_path->getClientOriginalName();
+        $filename = time() . '-' . $request->image_path->getClientOriginalName();
         $request->image_path->storeAs('images/projects', $filename);
 
         $tags = explode(",", $request->tags);
@@ -62,22 +62,22 @@ class ProjectController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'project_link' => 'required|unique:projects,project_link,'.$project->id,
+            'project_link' => 'required|unique:projects,project_link,' . $project->id,
             'coder' => 'required',
             'overview' => 'required',
             'image_path' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'tags' => 'required'
+            // 'tags' => 'required'
         ]);
 
         $input = $request->all();
 
         $tags = explode(",", $request->tags);
 
-        if($image = $request->file('image_path')) {
-            $filename = time().'-'.$request->image_path->getClientOriginalName();
-            $request->image_path->storeAs('images', $filename);
+        if ($image = $request->file('image_path')) {
+            $filename = time() . '-' . $request->image_path->getClientOriginalName();
+            $request->image_path->storeAs('images/projects', $filename);
             $input['image_path'] = $filename;
-        }else {
+        } else {
             unset($input['image_path']);
         }
 
@@ -85,12 +85,11 @@ class ProjectController extends Controller
         $project->tag($tags);
 
         return redirect()->route('projects.index')->with('success', 'Project Updated Successfully');
-
     }
 
     public function destroy(Project $project)
     {
-        Storage::delete('frontend/images/projects/'.$project->image_path);
+        Storage::delete('frontend/images/projects/' . $project->image_path);
         $project->delete();
         return back()->with('success', 'Project Deleted Successfully');
     }

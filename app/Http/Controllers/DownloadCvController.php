@@ -14,7 +14,7 @@ class DownloadCvController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $filePath = public_path("cv\MyCV.pdf");
+        $filePath = public_path("cv\CV2023.pdf");
         $headers = ['Content-Type: application/pdf'];
         $fileName = 'Zaw-Hlaing-Win.pdf';
         return response()->download($filePath, $fileName, $headers);

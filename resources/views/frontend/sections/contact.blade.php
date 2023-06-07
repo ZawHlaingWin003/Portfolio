@@ -32,7 +32,7 @@
                         </li>
                         <li class="contact-info__list__item">
                             <span><img src="frontend/images/mail.png" alt=""></span>
-                            <span>davidzaw1111@gmail.com</span>
+                            <span>zawhlaingwin003@gmail.com</span>
                         </li>
                         <li class="contact-info__list__item">
                             <span><img src="frontend/images/call.png" alt=""></span>
@@ -52,7 +52,7 @@
                 <h2 class="contact-form__title">Feel free to drop me a line <img src="frontend/images/gif/Email.gif" alt="Email" width="50" height="50"></h2>
 
                 <div id="response" class="d-none"></div>
-                <form action="{{ route('contact.store') }}" method="POST" class="contact-form__box" autocomplete="off" id="contact-form">
+                <form action="{{ route('contact.send') }}" method="POST" class="contact-form__box" autocomplete="off" id="contact-form">
                     @csrf
 
                     <div class="input-box w50">
@@ -79,14 +79,10 @@
                         <span class="focus-border"></span>
                         <small><span class="text-danger error message__err"></span></small>
                     </div>
-                    <button type="submit" class="main-btn mt-3" id="btn">
+                    
+                    <x-main-button type="submit" iconName="fa-message">
                         Send Message
-                        <span>
-                            <svg>
-                                <use xlink:href="#arrow" href="#arrow"></use>
-                            </svg>
-                        </span>
-                    </button>
+                    </x-main-button>
                 </form>
             </div>
         </div>
@@ -99,8 +95,9 @@
     $(document).ready(function(){
         $('#contact-form').submit(function (e) {
             e.preventDefault();
-            let url = $(this).attr('action');
-            $("#btn").attr('disabled', true).css('cursor', 'wait');
+            const url = $(this).attr('action');
+            const type = $(this).attr('method');
+            $("#contact-button").attr('disabled', true).css('cursor', 'wait');
 
             var _token = $("input[name='_token']").val();
             var name = $("#name").val();

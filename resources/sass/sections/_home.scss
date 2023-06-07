@@ -57,11 +57,10 @@
             }
 
             &-btns{
-                margin-top: 1.5rem;
-
-                a{
-                    margin: .5rem 2rem;
-                }
+                margin-top: 2rem;
+                display: flex;
+                justify-content: center;
+                gap: 2rem;
             }
 
         }

@@ -1,106 +1,47 @@
-@use "../custom" as *;
 @use "../variables" as *;
 
-// Main Button
-
 .main-btn {
-    position: relative;
-    display: inline-flex;
-    text-decoration: none;
-    color: var(--clr-white);
-    font-weight: 400;
-    background-color: transparent;
-    border: 1px solid var(--clr-accent);
-    padding-left: 1rem;
-    overflow: hidden;
-    z-index: 1;
+    background: var(--clr-accent);
+    cursor: pointer;
+    outline: none;
+    border: none;
+    display: flex;
     align-items: center;
-    box-shadow: 0px 3px 4px -4px rgba(0, 0, 0, 0.75);
-    transition: all .3s ease-in-out;
+    border-radius: 3px;
+    position: relative;
 
-    @include media-breakpoint-down(md){
-        font-size: var(--sm-font);
+    i {
+        padding: 10px 15px;
+        border-right: 1px dotted var(--clr-light-black);
     }
 
-    &::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        transform: scaleX(0);
-        transform-origin: 0 50%;
-        width: 100%;
-        height: 100%;
-        background-color: var(--clr-accent);
-        z-index: -1;
-        transition: transform .7s;
-    }
-
-    span {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-left: 1rem;
-        padding: 1rem;
-        overflow: hidden;
-        background-color: var(--clr-accent);
-
-        @include media-breakpoint-down(md){
-            padding: .5rem;
-        }
-    }
-
-    svg {
-        max-width: 20px;
-        width: 100%;
-        height: auto;
-        max-height: 18px;
-        fill: var(--clr-white);
+    .btn-text {
+        padding: 10px 12px;
+        letter-spacing: .5px;
     }
 
     &:hover {
-        color: var(--clr-dark-black);
-        font-weight: 500;
+        background: var(--clr-accent-light);
     }
 
-    &:hover::before {
-        transform: scaleX(1);
+    &:active {
+        background: var(--clr-accent-dark);
+        top: 2px;
     }
 
-    &:hover svg {
-        animation: moveArrow .7s;
-        fill: var(--clr-dark-black);
+    &:disabled {
+        background: gray;
+        cursor: not-allowed;
     }
 }
-
-
-@keyframes moveArrow {
-
-    0% {
-        transform: translateX(0px);
-    }
-
-    49% {
-        transform: translateX(50px);
-    }
-
-    50% {
-        transform: translateX(-50px);
-    }
-
-    100% {
-        transform: translateX(0px);
-    }
-
-}
-
 
 // Line Btn
 
-.line-btn{
+.line-btn {
     position: relative;
+    color: var(--clr-accent);
 
-    &::after{
+    &::after {
         content: '';
         position: absolute;
         left: 0;
@@ -111,8 +52,17 @@
         transform: scaleX(0);
         transform-origin: right;
         transition: transform 250ms ease-in;
+        -webkit-transition: transform 250ms ease-in;
+        -moz-transition: transform 250ms ease-in;
+        -ms-transition: transform 250ms ease-in;
+        -o-transition: transform 250ms ease-in;
     }
-    &:hover::after{
+
+    &:hover {
+        color: var(--clr-accent-dark);
+    }
+
+    &:hover::after {
         transform: scaleX(1);
         transform-origin: left;
     }

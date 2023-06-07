@@ -1,37 +1,37 @@
 
 /*===== Bg Circle Animate =====*/
-// gsap.fromTo('.circle-home-one', {
-//     x: '-30rem',
-//     opacity: 0
-// }, {
-//     x: 0,
-//     opacity: 1,
-//     ease: 'back.out(1.7)',
-//     delay: .8
-// });
+gsap.fromTo('.circle-home-one', {
+    x: '-30rem',
+    opacity: 0
+}, {
+    x: 0,
+    opacity: 1,
+    ease: 'back.out(1.7)',
+    delay: .8
+});
 
-// gsap.fromTo('.circle-home-two', {
-//     x: '30rem',
-//     opacity: 0
-// }, {
-//     x: 0,
-//     opacity: 1,
-//     ease: 'back.out(1.7)',
-//     delay: 1
-// });
+gsap.fromTo('.circle-home-two', {
+    x: '30rem',
+    opacity: 0
+}, {
+    x: 0,
+    opacity: 1,
+    ease: 'back.out(1.7)',
+    delay: 1
+});
 
 
 
 /*===== Banner Name Animate =====*/
-// let name = gsap.timeline({
-//     defaults: {
-//         ease: "SloMo.easeOut"
-//     }
-// });
-// name.to('#name, #job', {
-//     y: "0%",
-//     duration: 0.7
-// });
+let name = gsap.timeline({
+    defaults: {
+        ease: "SloMo.easeOut"
+    }
+});
+name.to('#name, #job', {
+    y: "0%",
+    duration: 0.7
+});
 
 
 
@@ -54,7 +54,7 @@ baguetteBox.run('.biography__img, .gallery-container');
 $(document).ready(function () {
 
     /*===== Quick Links =====*/
-    /* $(window).on('scroll', function () {
+    $(window).on('scroll', function () {
         var link = $('.quick-links a.dot');
         var top = $(window).scrollTop();
         $('section').each(function () {
@@ -66,7 +66,7 @@ $(document).ready(function () {
                 $('.quick-links').find('[data-scroll="' + id + '"]').addClass('active');
             }
         });
-    }); */
+    });
 
     /*===== Scroll Top Btn Show Hide =====*/
     $(window).scroll(function () {
@@ -91,7 +91,7 @@ $(document).ready(function () {
 
 
     /*===== Loading =====*/
-    $(window).on("load", function(){
+    $(window).on("load", function () {
         $('.load-wrap').fadeOut("slow");
         $('html').css('overflow', 'auto');
     });

@@ -4,17 +4,24 @@
 .post-item {
     border-radius: 3px;
 
-
-    &:hover .post-img{
-
-        img{
-
+    &:hover .post-img {
+        img {
             transform: scale(1.1);
         }
-        .icons{
+
+        .icons {
             transform: translateY(0);
         }
     }
+
+    &:hover .post-info {
+        border-color: var(--clr-accent);
+        transition: all .5s;
+        -webkit-transition: all .5s;
+        -moz-transition: all .5s;
+        -ms-transition: all .5s;
+        -o-transition: all .5s;
+}
 
     .post-img {
         position: relative;
@@ -72,7 +79,7 @@
 
     .post-info {
         padding: 1rem;
-        border: .5px solid var(--clr-accent);
+        border: .5px solid var(--clr-light-black);
         border-top: none;
 
 

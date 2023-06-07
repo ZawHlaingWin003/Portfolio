@@ -1,5 +1,3 @@
-
-
 <!-- ========== BLogs Section ========== -->
 <section class="blogs" id="blogs">
     <div class="container">
@@ -18,7 +16,7 @@
                 @forelse ($latestBlogs as $blog)
                     <div class="blog-item">
                         <div class="blog-img">
-                            <img src="{{ asset('frontend/images/blogs/'.$blog->image_path) }}" alt="">
+                            <img src="{{ asset('frontend/images/blogs/' . $blog->image_path) }}" alt="">
                         </div>
                         <div class="blog-content">
                             <div class="blog-title">
@@ -31,7 +29,8 @@
                                         {{ $blog->created_at->diffForHumans() }}
                                     </div>
                                     <div class="blog-category">
-                                        <a href="{{ route('blogs.index', ['category' => $blog->category->name]) }}" class="line-btn">{{ $blog->category->name }}</a>
+                                        <a href="{{ route('blogs.index', ['category' => $blog->category->name]) }}"
+                                            class="line-btn">{{ $blog->category->name }}</a>
                                     </div>
                                 </div>
                                 <div class="blog-excerpt">
@@ -51,15 +50,10 @@
                     </marquee>
                 @endforelse
             </div>
-            <div class="more-blogs-btn">
-                <a href="{{ url('/blogs') }}" class="main-btn">
+            <div class="more-blogs-btn d-flex justify-content-center">
+                <x-link-button href="{{ url('/blogs') }}" iconName="fa-blog">
                     View All Blogs
-                    <span>
-                        <svg>
-                            <use xlink:href="#arrow" href="#arrow"></use>
-                        </svg>
-                    </span>
-                </a>
+                </x-link-button>
             </div>
         </div>
     </div>

@@ -8,12 +8,13 @@
 // IMPORT THE COMPONENTS
 @use "components/titles";
 @use "components/button";
-// @use "components/circles";
 @use "components/github-icon";
-@use "components/loading";
 @use "components/scroll-top";
-// @use "components/quick-links";
 @use "components/blog-card";
+@use "components/page-loader";
+@use "components/fetch-loader";
+@use "components/circles";
+@use "components/quick-links";
 
 // IMPORT THE SECTIONS
 @use "sections/header";

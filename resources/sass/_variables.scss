@@ -7,11 +7,13 @@
 
 
 :root{
-    --clr-white: #ffffff;
+    --clr-white: #e4e4e4;
     --clr-light-black: #1e1e1e;
     --clr-dark-black: #141414;
 
     --clr-accent: #00C896;
+    --clr-accent-light: #21e2b2;
+    --clr-accent-dark: #119675;
 
     --font-poppins: 'Poppins', sans-serif;
     --title-font: 'Playfair Display', serif;
@@ -68,10 +70,11 @@ html{
 }
 body{
     font-size: 16px;
-    font-weight: 300;
     font-family: var(--body-font);
     color: var(--clr-white);
     background-color: var(--clr-dark-black);
+    position: relative;
+    overflow-x: hidden;
 }
 
 section{
@@ -89,6 +92,19 @@ ul{
 
 a{
     text-decoration: none;
+    color: var(--clr-dark-black);
+}
+
+a:hover {
+    color: var(--clr-dark-black);
+}
+
+a.link {
+    color: var(--clr-accent);
+}
+
+a.link:hover {
+    color: var(--clr-accent-dark);
 }
 
 p{
@@ -113,7 +129,7 @@ p{
 
   /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #888;
+    background: #00C896;
 }
 
   /* Handle on hover */

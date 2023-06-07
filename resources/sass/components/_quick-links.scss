@@ -1,0 +1,108 @@
+@use "../variables" as *;
+
+.quick-links {
+    position: fixed;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    z-index: 1000;
+    text-transform: capitalize;
+
+    @media screen and (max-width: 1024px) {
+        display: none;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            position: relative;
+            text-align: right;
+
+            &:hover .dot span {
+                transform: translateX(0px);
+                opacity: 1;
+            }
+
+            &:hover .dot::before {
+                border-color: var(--clr-accent);
+                background: var(--clr-accent);
+            }
+
+            &:hover .dot::after {
+                transform: translateY(-50%) scale(1);
+            }
+
+            .dot {
+                color: var(--clr-white);
+                display: block;
+                padding: 5px 0;
+                font-size: var(--sm-font);
+
+                &.active::before{
+                    border-color: var(--clr-accent);
+                    background: var(--clr-accent);
+                }
+
+                &.active::after {
+                    transform: translateY(-50%) scale(1);
+                }
+
+                &::before, &::after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    border-radius: 50%;
+                    display: block;
+                    transition: .2s ease-out;
+                }
+
+                &::before {
+                    height: 15px;
+                    width: 15px;
+                    border: 2px solid var(--clr-white);
+                    right: 0;
+                    transform: translateY(-50%);
+                }
+                &::after {
+                    height: 25px;
+                    width: 25px;
+                    border: 2px solid var(--clr-accent);
+                    right: -5px;
+                    transform: translateY(-50%) scale(0);
+                }
+
+                span {
+                    display: inline-block;
+                    background: var(--clr-accent);
+                    letter-spacing: 1px;
+                    padding: 4px 10px;
+                    margin-right: 30px;
+                    border-radius: 3px;
+                    transform: translateX(30px);
+                    opacity: 0;
+                    border-right: 1px solid transparent;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        right: 0;
+                        transform: translate(7px, -50%);
+                        border-left: 7px solid var(--clr-accent);
+                        border-top: 7px solid transparent;
+                        border-bottom: 7px solid transparent;
+                        display: block;
+                    }
+                }
+            }
+
+        }
+
+    }
+
+}
+
+
