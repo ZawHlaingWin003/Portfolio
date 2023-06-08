@@ -90,7 +90,7 @@
                     </div>
                 </div>
                 <div class="blog-img">
-                    <img src="{{ asset('frontend/images/blogs/'.$blog->image_path) }}" alt="">
+                    <img src="{{ $blog->image_path }}" alt="">
                 </div>
 
                 <div class="blog-content">
@@ -122,7 +122,7 @@
 
                             <div class="@if(count($relatedBlogs) == 1 || count($relatedBlogs) > 2) col-lg-4 col-md-6 @else col-md-6 @endif post-item">
                                 <div class="post-img">
-                                    <img src="{{ asset('frontend/images/blogs/'.$blog->image_path) }}" alt="">
+                                    <img src="{{ $blog->image_path }}" alt="">
                                     <div class="icons">
                                         <a href="#"> <i class="fas fa-calendar"></i> {{ $blog->created_at->diffForHumans() }}</a>
                                         <a href="{{ route('blogs.index', ['author' => $blog->author->name]) }}" class="line-btn"> <i class="fas fa-user"></i> by {{ $blog->author->name }}</a>

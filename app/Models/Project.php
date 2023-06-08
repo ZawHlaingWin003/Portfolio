@@ -8,13 +8,22 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Project extends Model
 {
     use HasFactory;
-    use \Conner\Tagging\Taggable;
 
     protected $fillable = [
         'title',
         'project_link',
         'coder',
         'overview',
-        'image_path'
+        'image'
     ];
+
+    public function getImageAttribute($value)
+    {
+        return asset("images/projects/$value");
+    }
+
+    public function skills()
+    {
+        return $this->belongsToMany(Skill::class);
+    }
 }

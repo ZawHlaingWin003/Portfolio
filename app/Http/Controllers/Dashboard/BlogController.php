@@ -29,11 +29,19 @@ class BlogController extends Controller
     {
         if ($request->search) {
             $blogs = Blog::where('title', 'like', '%' . $request->search . '%')
-                ->orWhere('content', 'like', '%' . $request->search . '%')->latest()->paginate(5);
+                ->orWhere('content', 'like', '%' . $request->search . '%')
+                ->latest()
+                ->paginate(5);
         } elseif ($request->category) {
-            $blogs = Category::where('name', $request->category)->firstOrFail()->blogs()->paginate(5);
+            $blogs = Category::where('name', $request->category)
+                ->firstOrFail()
+                ->blogs()
+                ->paginate(5);
         } elseif ($request->author) {
-            $blogs = User::where('name', $request->author)->firstOrFail()->blogs()->paginate(5);
+            $blogs = User::where('name', $request->author)
+                ->firstOrFail()
+                ->blogs()
+                ->paginate(5);
         } else {
             $blogs = Blog::latest()->paginate(7);
         }
@@ -112,7 +120,11 @@ class BlogController extends Controller
             abort(403);
         } else {
 
-            if ($request->file('image_path')) {
+            if ($request->hasFile('image_path')) {
+                $oldFile = "images/blogs/" . $blog->getRawOriginal('image_path');
+                if (Storage::exists($oldFile)) {
+                    Storage::delete($oldFile);
+                }
                 $filename = time() . '-' . $request->slug . '.' . $request->image_path->getClientOriginalExtension();
                 $request->image_path->storeAs('images/blogs', $filename);
                 $blog->image_path = $filename;
@@ -138,7 +150,7 @@ class BlogController extends Controller
             abort(403);
         }
 
-        Storage::delete('frontend/images/blogs/' . $blog->image_path);
+        Storage::delete('images/blogs/' . $blog->getRawOriginal('image_path'));
         $blog->delete();
 
         return back()->with('success', 'Blog Deleted Successfully!');

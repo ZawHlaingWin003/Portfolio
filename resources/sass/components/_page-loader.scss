@@ -10,17 +10,16 @@
     background-color: var(--clr-dark-black);
     z-index: var(--z-4);
 
-    .loading{
-        max-width: max-content;
-        height: 80px;
-        text-align: center;
-        position: relative;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+    .loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
     }
 
     .letter-holder {
+        font-weight: 300;
+        letter-spacing: 5px;
 
         .letter {
             float: left;
@@ -33,11 +32,11 @@
             animation-iteration-count: infinite;
             animation-direction: linear;
 
-            @include media-breakpoint-down(md){
+            @include media-breakpoint-down(md) {
                 font-size: 3rem;
             }
 
-            @include media-breakpoint-down(sm){
+            @include media-breakpoint-down(sm) {
                 font-size: 2.5rem;
             }
         }

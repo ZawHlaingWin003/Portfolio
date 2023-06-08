@@ -111,6 +111,14 @@ p{
     margin: 0;
 }
 
+p.link {
+    color: var(--clr-accent);
+}
+
+p.link:hover {
+    color: var(--clr-accent-dark);
+}
+
 ::selection {
     color: var(--clr-dark-black);
     background-color: var(--clr-white);

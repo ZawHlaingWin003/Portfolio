@@ -9,5 +9,8 @@
 <!-- Image Click & Show -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
 
+<!-- Sweetalert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <!-- Main Script -->
 <script src="{{ asset('frontend/js/app.js') }}"></script>

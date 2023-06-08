@@ -16,7 +16,7 @@
                 @forelse ($latestBlogs as $blog)
                     <div class="blog-item">
                         <div class="blog-img">
-                            <img src="{{ asset('frontend/images/blogs/' . $blog->image_path) }}" alt="">
+                            <img src="{{ $blog->image_path }}" alt="">
                         </div>
                         <div class="blog-content">
                             <div class="blog-title">

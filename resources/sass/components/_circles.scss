@@ -1,6 +1,12 @@
+@use "../custom" as *;
+
 .circle {
     position: absolute;
     z-index: 2;
+
+    @include media-breakpoint-down(lg) {
+        z-index: -1;
+    }
 }
 
 .circle-small {
@@ -11,4 +17,8 @@
 .circle-home-small {
     bottom: -15rem;
     right: -20rem;
+
+    @include media-breakpoint-down(lg) {
+        display: none;
+    }
 }

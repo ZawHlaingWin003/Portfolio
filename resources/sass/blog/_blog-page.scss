@@ -7,16 +7,20 @@
 .blogPage {
     padding-top: 12rem;
 
+    @include media-breakpoint-down(lg) {
+        padding-top: 5rem;
+    }
+
     .banner {
         width: 65%;
         position: relative;
         margin: 0 auto;
 
-        @include media-breakpoint-down(lg){
+        @include media-breakpoint-down(lg) {
             width: 90%;
         }
 
-        @include media-breakpoint-down(md){
+        @include media-breakpoint-down(md) {
             top: 3rem;
         }
 
@@ -25,7 +29,7 @@
             font-family: var(--title-font);
             text-align: center;
 
-            .zaw{
+            .zaw {
                 -webkit-text-stroke: 1px var(--clr-accent);
                 color: transparent;
             }
@@ -50,6 +54,11 @@
                     border: none;
                     padding: 15px;
                     transition: 0.4s;
+
+                    @include media-breakpoint-down(lg){
+                        font-size: .8rem;
+                        padding: 10px;
+                    }
 
                     &:focus {
                         outline: none;
@@ -117,11 +126,11 @@
 
 }
 
-.posts{
+.posts {
 
-    .breadcrumb-links{
+    .breadcrumb-links {
 
-        @include media-breakpoint-down(md){
+        @include media-breakpoint-down(md) {
             font-size: var(--sm-font);
         }
     }
@@ -130,7 +139,7 @@
         display: flex;
         gap: 50px;
 
-        @include media-breakpoint-down(md){
+        @include media-breakpoint-down(md) {
             display: block;
         }
 
@@ -138,10 +147,11 @@
             width: 100%;
             padding-bottom: 2rem;
 
-            @include media-breakpoint-down(lg){
+            @include media-breakpoint-down(lg) {
                 width: 60%;
             }
-            @include media-breakpoint-down(md){
+
+            @include media-breakpoint-down(md) {
                 width: 100%;
             }
 
@@ -197,7 +207,7 @@
                             margin: 1rem 0;
                             font-size: .9rem;
 
-                            @include media-breakpoint-down(md){
+                            @include media-breakpoint-down(md) {
                                 font-size: var(--sm-font);
                                 display: block;
                             }
@@ -209,18 +219,19 @@
                             &>div {
                                 padding-right: 3rem;
 
-                                @include media-breakpoint-down(md){
+                                @include media-breakpoint-down(md) {
                                     margin-bottom: .5rem;
                                 }
                             }
 
-                            .author, .category{
+                            .author,
+                            .category {
 
-                                a{
+                                a {
                                     color: var(--clr-white);
                                     transition: all .3s;
 
-                                    &:hover{
+                                    &:hover {
                                         color: var(--clr-accent);
                                     }
                                 }
@@ -288,17 +299,17 @@
                 @include grid(300px);
             }
 
-            .pagination{
+            .pagination {
                 margin-top: 2rem;
 
-                .page-item{
+                .page-item {
 
-                    &.active .page-link{
+                    &.active .page-link {
                         background-color: var(--clr-accent);
                     }
                 }
 
-                .page-link{
+                .page-link {
                     padding: 7px 15px;
                     background-color: transparent;
                     border: 1px solid var(--clr-accent);
@@ -311,13 +322,14 @@
             width: 30%;
             position: relative;
 
-            @include media-breakpoint-down(lg){
+            @include media-breakpoint-down(lg) {
                 width: 40%;
             }
+
             // @include media-breakpoint-down(md){
             //     width: 50%;
             // }
-            @include media-breakpoint-down(md){
+            @include media-breakpoint-down(md) {
                 width: 100%;
             }
 
@@ -334,12 +346,13 @@
 
             .categories {
 
-                &-list{
+                &-list {
                     padding: 0;
                 }
 
                 &-item {
                     padding: .8rem .8rem .8rem 0;
+
                     a {
                         padding: 10px;
                         color: var(--clr-white);
@@ -417,7 +430,7 @@
             .popular-posts {
                 text-align: center;
 
-                &-list{
+                &-list {
 
                     .post {
                         margin-top: 3rem;
@@ -472,8 +485,3 @@
         }
     }
 }
-
-
-
-
-

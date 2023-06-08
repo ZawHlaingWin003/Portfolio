@@ -7,25 +7,14 @@
 
     <!-- ========== Blog Page ========== -->
     <section class="blogPage" id="blogPage">
-
-        <!-- ========== Circles ========== -->
-        <div class="circle circle-home-one d-none">
-            <img src="frontend/images/circle-small.png" alt="">
-        </div>
-
-        <div class="circle circle-home-two d-none">
-            <img src="frontend/images/circle-small.png" alt="">
-        </div>
-
-
         <div class="container">
             <div class="banner">
                 <div class="banner-title">
-                    <h1 class="display-1"><span class="zaw">Zaw.</span> Coder Blog</h1>
+                    <h1 class="display-1"><span class="zaw">Zaw.</span> Blog</h1>
                 </div>
                 <form action="" autocomplete="off">
                     <div class="input-group">
-                        <input class="search" type="text" placeholder="Search Blog Here" name="search">
+                        <input class="search" type="text" placeholder="Search Blog Here" name="search" value="{{ request()->search }}">
                         <span class="focus-border">
                             <i></i>
                         </span>
@@ -59,7 +48,7 @@
                     @if (count($blogs))
                         <div class="latest-post">
                             <div class="blog-item">
-                                <img src="{{ asset('frontend/images/blogs/' . $blogs[0]->image_path) }}" alt="">
+                                <img src="{{ $blogs[0]->image_path }}" alt="">
                                 <div class="blog-detail">
                                     <div class="blog-title">
                                         <h1><a href="{{ route('blogs.show', $blogs[0]) }}" class="link">{{ $blogs[0]->title }}</a></h1>
@@ -111,7 +100,7 @@
                         @foreach ($blogs->skip(1) as $blog)
                             <div class="post-item">
                                 <div class="post-img">
-                                    <img src="{{ asset('frontend/images/blogs/' . $blog->image_path) }}" alt="">
+                                    <img src="{{ $blog->image_path }}" alt="Blog Image">
                                     <div class="icons">
                                         <a href="#"> <i class="fas fa-calendar"></i>
                                             {{ $blog->created_at->diffForHumans() }}</a>
@@ -185,7 +174,7 @@
                             @foreach ($latestBlog as $blog)
                                 <div class="post">
                                     <div class="post-img">
-                                        <img src="{{ asset('frontend/images/blogs/' . $blog->image_path) }}"
+                                        <img src="{{ $blog->image_path }}"
                                             alt="">
                                     </div>
                                     <div class="post-title">
@@ -208,5 +197,4 @@
 
 
 @section('custom_js')
-
 @endsection

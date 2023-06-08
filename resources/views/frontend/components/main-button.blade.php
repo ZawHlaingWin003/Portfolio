@@ -1,8 +1,10 @@
-@props(['buttonId' => '', 'loaderId' => '', 'iconName' => '', 'iconId' => ''])
+@props(['buttonId' => '', 'iconName' => ''])
 
 <button {{ $attributes->merge(['class' => 'main-btn']) }} id="{{ $buttonId }}">
-    <x-fetch-loader class="button-loader" id="{{ $loaderId }}" style="display: none;" />
-    <span class="btn-icon" id="{{ $iconId }}">
+    <span class="btn-loader" id="{{ $buttonId }}-loader" style="display: none;">
+        <x-fetch-loader class="button-loader" />
+    </span>
+    <span class="btn-icon" id="{{ $buttonId }}-icon">
         <i class="fa-solid {{ $iconName }}"></i>
     </span>
     <span class="btn-text">

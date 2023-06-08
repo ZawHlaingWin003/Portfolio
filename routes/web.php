@@ -28,10 +28,10 @@ Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
 Route::get('/blogs/{blog}', [BlogController::class, 'show'])->name('blogs.show');
 
 // ========== Download CV ==========
-Route::get('/download-cv', DownloadCvController::class)->name('download-cv');
+Route::get('/download-cv', DownloadCvController::class)->name('cv.download');
 
 // ========== Send Message ==========
-Route::post('/contact', ContactController::class)->name('contact.send');
+Route::post('/send-message', ContactController::class)->name('message.send');
 
 // ========== Admin Dashboard ==========
 Route::get('/admin', function(){

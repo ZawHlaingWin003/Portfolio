@@ -1,37 +1,37 @@
 
 /*===== Bg Circle Animate =====*/
-gsap.fromTo('.circle-home-one', {
-    x: '-30rem',
-    opacity: 0
-}, {
-    x: 0,
-    opacity: 1,
-    ease: 'back.out(1.7)',
-    delay: .8
-});
+// gsap.fromTo('.circle-home-one', {
+//     x: '-30rem',
+//     opacity: 0
+// }, {
+//     x: 0,
+//     opacity: 1,
+//     ease: 'back.out(1.7)',
+//     delay: .8
+// });
 
-gsap.fromTo('.circle-home-two', {
-    x: '30rem',
-    opacity: 0
-}, {
-    x: 0,
-    opacity: 1,
-    ease: 'back.out(1.7)',
-    delay: 1
-});
+// gsap.fromTo('.circle-home-two', {
+//     x: '30rem',
+//     opacity: 0
+// }, {
+//     x: 0,
+//     opacity: 1,
+//     ease: 'back.out(1.7)',
+//     delay: 1
+// });
 
 
 
 /*===== Banner Name Animate =====*/
-let name = gsap.timeline({
-    defaults: {
-        ease: "SloMo.easeOut"
-    }
-});
-name.to('#name, #job', {
-    y: "0%",
-    duration: 0.7
-});
+// let name = gsap.timeline({
+//     defaults: {
+//         ease: "SloMo.easeOut"
+//     }
+// });
+// name.to('#name, #job', {
+//     y: "0%",
+//     duration: 0.7
+// });
 
 
 
@@ -82,6 +82,16 @@ $(document).ready(function () {
         $('#nav-toggle').toggleClass('active');
         $('#nav-menu').toggleClass('active');
     })
+
+    // Close the navigation div when clicking outside of it
+    $(document).click(function (event) {
+        let isNavMenuClicked = document.getElementById("nav-menu").contains(event.target);
+        let isNavToggleClicked = document.getElementById("nav-toggle").contains(event.target);
+        if (!isNavMenuClicked && !isNavToggleClicked) {
+            $("#nav-menu").removeClass('active');
+            $("#nav-toggle").removeClass('active');
+        }
+    });
 
     /*===== Reset Nav Toggle While Scrolling  =====*/
     $(window).scroll(function () {

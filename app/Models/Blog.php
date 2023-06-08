@@ -35,6 +35,11 @@ class Blog extends Model
         return 'slug';
     }
 
+    public function getImagePathAttribute($value)
+    {
+        return asset("images/blogs/$value");
+    }
+
     public function author()
     {
         return $this->belongsTo(User::class);

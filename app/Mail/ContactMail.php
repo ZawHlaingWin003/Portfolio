@@ -13,11 +13,6 @@ class ContactMail extends Mailable
 
     public $name, $email, $subject, $message;
 
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
     public function __construct($name, $email, $subject, $message)
     {
         $this->name = $name;
@@ -26,11 +21,6 @@ class ContactMail extends Mailable
         $this->message = $message;
     }
 
-    /**
-     * Build the message.
-     *
-     * @return $this
-     */
     public function build()
     {
         $email = $this->email;

@@ -34,6 +34,11 @@ class DatabaseSeeder extends Seeder
             'remember_token' => Str::random(10),
         ]);
 
-        $this->call(CategorySeeder::class);
+        $this->call([
+            CategorySeeder::class,
+            ProjectSeeder::class,
+            SkillSeeder::class,
+            ProjectSkillSeeder::class
+        ]);
     }
 }

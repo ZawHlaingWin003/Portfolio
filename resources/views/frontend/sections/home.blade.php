@@ -21,7 +21,7 @@
                     <x-link-button href="#projects" iconName="fa-suitcase">
                         View Projects
                     </x-link-button>
-                    <x-link-button iconName="fa-download">
+                    <x-link-button href="{{ route('cv.download') }}" iconName="fa-download">
                         Download CV
                     </x-link-button>
                 </div>

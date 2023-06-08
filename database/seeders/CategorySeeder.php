@@ -14,17 +14,13 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        Category::create([
-            'name' => 'HTML\CSS'
-        ]);
-        Category::create([
-            'name' => 'Javacript\Jquery\VueJs'
-        ]);
-        Category::create([
-            'name' => 'PHP\Laravel'
-        ]);
-        Category::create([
-            'name' => 'Developer Tidbits'
-        ]);
+
+        $categories = ['HTML\CSS', 'JS\Jquery\VueJs', 'PHP\Laravel', 'Developer Tidbits'];
+
+        foreach ($categories as $category) {
+            Category::create([
+                'name' => $category
+            ]);
+        }
     }
 }

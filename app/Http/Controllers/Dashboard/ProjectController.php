@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Models\Skill;
 use App\Models\Project;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
@@ -27,30 +29,36 @@ class ProjectController extends Controller
             'project_link' => 'required|unique:projects,project_link',
             'coder' => 'required',
             'overview' => 'required',
-            'image_path' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            // 'tags' => 'required'
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'skills' => 'required'
         ]);
 
-        $filename = time() . '-' . $request->image_path->getClientOriginalName();
-        $request->image_path->storeAs('images/projects', $filename);
+        $slug = Str::slug($request->title, '-');
+        $file = $request->file('image');
+        $folder = 'images/projects';
 
-        $tags = explode(",", $request->tags);
+        $filename = time() . '-' . $slug . '.' . $file->getClientOriginalExtension();
+        $request->image->storeAs($folder, $filename);
 
         $project = Project::create([
             'title' => $request->title,
             'project_link' => $request->project_link,
             'coder' => $request->coder,
             'overview' => $request->overview,
-            'image_path' => $filename
+            'image' => $filename
         ]);
-        $project->tag($tags);
+
+        $requestedSkills = explode(",", $request->skills);
+
+        foreach ($requestedSkills as $skill) {
+            $newSkill = Skill::firstOrCreate([
+                'name' => $skill
+            ]);
+
+            $project->skills()->attach($newSkill);
+        }
 
         return back()->with('success', 'Project Created Successfully');
-    }
-
-    public function show(Project $project)
-    {
-        //
     }
 
     public function edit(Project $project)
@@ -65,31 +73,53 @@ class ProjectController extends Controller
             'project_link' => 'required|unique:projects,project_link,' . $project->id,
             'coder' => 'required',
             'overview' => 'required',
-            'image_path' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            // 'tags' => 'required'
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $input = $request->all();
+        $project->title = $request->title;
+        $project->project_link = $request->project_link;
+        $project->coder = $request->coder;
+        $project->overview = $request->overview;
 
-        $tags = explode(",", $request->tags);
+        if ($request->hasFile('image')) {
 
-        if ($image = $request->file('image_path')) {
-            $filename = time() . '-' . $request->image_path->getClientOriginalName();
-            $request->image_path->storeAs('images/projects', $filename);
-            $input['image_path'] = $filename;
+            $oldFile = "images/projects/" . $project->getRawOriginal('image');
+            if (Storage::exists($oldFile)) {
+                Storage::delete($oldFile);
+            }
+
+            $slug = Str::slug($request->title, '-');
+            $file = $request->file('image');
+            $folder = 'images/projects';
+
+            $filename = time() . '-' . $slug . '.' . $file->getClientOriginalExtension();
+            $request->image->storeAs($folder, $filename);
+
+            $project->image = $filename;
         } else {
-            unset($input['image_path']);
+            unset($request->image);
         }
 
-        $project->update($input);
-        $project->tag($tags);
+        if ($request->has('skills')) {
+            $requestedSkills = explode(",", $request->skills);
+    
+            foreach ($requestedSkills as $skill) {
+                $newSkill = Skill::firstOrCreate([
+                    'name' => $skill
+                ]);
+    
+                $project->skills()->attach($newSkill);
+            }
+        }
+
+        $project->update();
 
         return redirect()->route('projects.index')->with('success', 'Project Updated Successfully');
     }
 
     public function destroy(Project $project)
     {
-        Storage::delete('frontend/images/projects/' . $project->image_path);
+        Storage::delete('images/projects/' . $project->getRawOriginal('image'));
         $project->delete();
         return back()->with('success', 'Project Deleted Successfully');
     }

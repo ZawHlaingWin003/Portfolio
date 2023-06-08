@@ -1,3 +1,4 @@
+@use "../custom" as *;
 @use "../variables" as *;
 
 .main-btn {
@@ -10,14 +11,33 @@
     border-radius: 3px;
     position: relative;
 
+    .btn-loader {
+        padding: 10px 15px;
+        border-right: 1px dotted var(--clr-light-black);
+        
+        @include media-breakpoint-down(lg) {
+            padding: 5px;
+        }
+    }
+
     i {
         padding: 10px 15px;
         border-right: 1px dotted var(--clr-light-black);
+
+        @include media-breakpoint-down(lg) {
+            padding: 5px;
+        }
     }
 
     .btn-text {
         padding: 10px 12px;
         letter-spacing: .5px;
+
+        @include media-breakpoint-down(lg) {
+            font-size: .8rem;
+            letter-spacing: 0;
+            padding: 5px;
+        }
     }
 
     &:hover {

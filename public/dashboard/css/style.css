@@ -148,9 +148,6 @@ a{
     margin: 20px 70px 70px;
     color: black;
 }
-.table-wrapper a{
-    color:
-}
 
 form{
     display: inline;
@@ -423,7 +420,7 @@ textarea::-webkit-scrollbar{
     background-color: #00C896;
     color: black;
     border-radius: 3px;
-    padding: 5px 6px;
+    padding: 0px 6px;
     margin-right: 5px;
     margin-bottom:5px;
 }

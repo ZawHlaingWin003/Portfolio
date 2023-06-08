@@ -68,11 +68,14 @@
                                     </a>
                                 </div>
                                 <div class="column last">
-                                    <a href="{{ asset('frontend/images/mine/zaw-6.jpeg') }}" class="lightbox" data-caption="Photo 6">
-                                        <img src="{{ asset('frontend/images/mine/zaw-6.jpeg') }}" class="img-fluid" alt="First image">
+                                    <a href="{{ asset('frontend/images/mine/pf-1.jpg') }}" class="lightbox" data-caption="Photo 6">
+                                        <img src="{{ asset('frontend/images/mine/pf-1.jpg') }}" class="img-fluid" alt="First image">
                                     </a>
                                     <a href="{{ asset('frontend/images/mine/zaw-7.jpeg') }}" class="lightbox" data-caption="Photo 7">
                                         <img src="{{ asset('frontend/images/mine/zaw-7.jpeg') }}" class="img-fluid" alt="First image">
+                                    </a>
+                                    <a href="{{ asset('frontend/images/mine/pf-2.jpg') }}" class="lightbox" data-caption="Photo 8">
+                                        <img src="{{ asset('frontend/images/mine/pf-2.jpg') }}" class="img-fluid" alt="First image">
                                     </a>
                                 </div>
                             </div>
@@ -92,9 +95,21 @@
                                     <div class="skill-detail">
                                         <h3>Frontend Development</h3>
                                         <div class="skill-list d-flex gap-3">
-                                            <p>HTML</p>
-                                            <p>CSS</p>
+                                            <p>HTML 5</p>
+                                            <p>CSS 3</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 skill">
+                                    <div class="skill-logo">
+                                        <img src="{{ asset('frontend/images/logos/mysql-icon.svg') }}" alt="" class="img-fluid">
+                                    </div>
+                                    <div class="skill-detail">
+                                        <h3>FullStack Development</h3>
+                                        <div class="skill-list d-flex gap-3">
                                             <p>Javascript</p>
+                                            <p>PHP</p>
+                                            <p>Mysql</p>
                                         </div>
                                     </div>
                                 </div>
@@ -103,8 +118,9 @@
                                         <img src="{{ asset('frontend/images/logos/tailwindcss-icon.svg') }}" alt="" class="img-fluid">
                                     </div>
                                     <div class="skill-detail">
-                                        <h3>Frontend Frameworks</h3>
+                                        <h3>Frontend Tech Stacks</h3>
                                         <div class="skill-list d-flex gap-3">
+                                            <p>SASS</p>
                                             <p>Bootstrap</p>
                                             <p>Tailwind</p>
                                             <p>Vuejs</p>
@@ -116,37 +132,30 @@
                                         <img src="{{ asset('frontend/images/logos/jquery-icon.svg') }}" alt="" class="img-fluid">
                                     </div>
                                     <div class="skill-detail">
-                                        <h3>Frontend Libraries</h3>
+                                        <h3>Popular Libraries</h3>
                                         <div class="skill-list d-flex gap-3">
                                             <p>JQuery</p>
                                             <p>Three.js</p>
                                             <p>GSAP</p>
                                             <p>Chart.js</p>
+                                            <p>Echart.js</p>
                                             <p>Swiper.js</p>
-                                            <p>Anime.css</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 skill">
-                                    <div class="skill-logo">
-                                        <img src="{{ asset('frontend/images/logos/mysql-icon.svg') }}" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="skill-detail">
-                                        <h3>Backend Development</h3>
-                                        <div class="skill-list d-flex gap-3">
-                                            <p>PHP</p>
-                                            <p>Mysql</p>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                                 <div class="col-md-6 skill">
                                     <div class="skill-logo">
                                         <img src="{{ asset('frontend/images/logos/laravel-icon.svg') }}" alt="" class="img-fluid">
                                     </div>
                                     <div class="skill-detail">
-                                        <h3>Backend Framework</h3>
+                                        <h3>FullStack Framework</h3>
                                         <div class="skill-list d-flex gap-3">
                                             <p>Laravel</p>
+                                            <p>Vuejs</p>
+                                            <p>Vue Router</p>
+                                            <p>Vuex</p>
+                                            <p>Pania</p>
                                         </div>
                                     </div>
                                 </div>
