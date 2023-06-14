@@ -11505,18 +11505,19 @@ p.link:hover {
 }
 
 .main-btn {
-  background: var(--clr-accent);
+  color: var(--clr-accent-light);
+  background: transparent;
   cursor: pointer;
   outline: none;
-  border: none;
+  border: 1px solid var(--clr-accent);
   display: flex;
   align-items: center;
   border-radius: 3px;
   position: relative;
+  transition: all 0.3s;
 }
 .main-btn .btn-loader {
   padding: 10px 15px;
-  border-right: 1px dotted var(--clr-light-black);
 }
 @media (max-width: 991.98px) {
   .main-btn .btn-loader {
@@ -11525,7 +11526,6 @@ p.link:hover {
 }
 .main-btn i {
   padding: 10px 15px;
-  border-right: 1px dotted var(--clr-light-black);
 }
 @media (max-width: 991.98px) {
   .main-btn i {
@@ -11535,6 +11535,7 @@ p.link:hover {
 .main-btn .btn-text {
   padding: 10px 12px;
   letter-spacing: 0.5px;
+  border-left: 1px dotted var(--clr-accent);
 }
 @media (max-width: 991.98px) {
   .main-btn .btn-text {
@@ -11545,6 +11546,10 @@ p.link:hover {
 }
 .main-btn:hover {
   background: var(--clr-accent-light);
+  color: var(--clr-dark-black);
+}
+.main-btn:hover .btn-text {
+  border-left: 1px dotted var(--clr-dark-black);
 }
 .main-btn:active {
   background: var(--clr-accent-dark);
@@ -11553,6 +11558,7 @@ p.link:hover {
 .main-btn:disabled {
   background: gray;
   cursor: not-allowed;
+  border: 1px solid gray;
 }
 
 .line-btn {

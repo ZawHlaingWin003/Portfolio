@@ -2,18 +2,19 @@
 @use "../variables" as *;
 
 .main-btn {
-    background: var(--clr-accent);
+    color: var(--clr-accent-light);
+    background: transparent;
     cursor: pointer;
     outline: none;
-    border: none;
+    border: 1px solid var(--clr-accent);
     display: flex;
     align-items: center;
     border-radius: 3px;
     position: relative;
+    transition: all .3s;
 
     .btn-loader {
         padding: 10px 15px;
-        border-right: 1px dotted var(--clr-light-black);
         
         @include media-breakpoint-down(lg) {
             padding: 5px;
@@ -22,7 +23,6 @@
 
     i {
         padding: 10px 15px;
-        border-right: 1px dotted var(--clr-light-black);
 
         @include media-breakpoint-down(lg) {
             padding: 5px;
@@ -32,6 +32,7 @@
     .btn-text {
         padding: 10px 12px;
         letter-spacing: .5px;
+        border-left: 1px dotted var(--clr-accent);
 
         @include media-breakpoint-down(lg) {
             font-size: .8rem;
@@ -42,6 +43,11 @@
 
     &:hover {
         background: var(--clr-accent-light);
+        color: var(--clr-dark-black);
+
+        .btn-text {
+            border-left: 1px dotted var(--clr-dark-black);
+        }
     }
 
     &:active {
@@ -52,6 +58,7 @@
     &:disabled {
         background: gray;
         cursor: not-allowed;
+        border: 1px solid gray;
     }
 }
 
